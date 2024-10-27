@@ -102,3 +102,14 @@ textarea {
 .incorrect {
     color: red;
 }
+
+.delete-button {
+    width: 100px; /* 设置按钮的宽度 */
+    height: 40px; /* 设置按钮的高度 */
+    /* 其他样式 */
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

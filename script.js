@@ -1,6 +1,6 @@
 let texts = [
     {
-        title: "OpenAI's Whisper transcription tool has hallucination issues",
+        title: "OpenAI's Whisper",
         content: `Software engineers, developers, and academic researchers have serious concerns about transcriptions from OpenAI's Whisper, according to a report in the Associated Press.
 
 While there's been no shortage of discussion around generative AI's tendency to hallucinate — basically, to make stuff up — it's a bit surprising that this is an issue in transcription, where you'd expect the transcript closely follow the audio being transcribed.
@@ -14,7 +14,7 @@ An OpenAI spokesperson said the company is “continually working to improve the
 “We thank researchers for sharing their findings,” they said.`
     },
     {
-        title: "Welcome back to Week in Review",
+        title: "Week in Review",
         content: `This week, we' re looking at OpenAI's reported plans for its next AI model; a buzzy new messaging app that's a hit with Gen Z; and Tim Cook discovering that you can name a group chat in iMessage. Let's get into it.
 
 The Verge noted this week that OpenAI is reportedly planning to release its next frontier AI model, code-named Orion, by December. An OpenAI spokesperson denied the claim to TechCrunch, saying, “We don't have plans to release a model code-named Orion this year.” But what that means is anybody's guess and leaves OpenAI substantial wiggle room.
@@ -24,7 +24,7 @@ Character.AI is being targeted in a lawsuit after the suicide of a 14-year-old b
 More than 100 million individuals had their private health information stolen during the February ransomware attack on Change Healthcare. It's the first time that UnitedHealth Group, the health insurance provider that owns the company, has put a number on the amount of individuals affected by the data breach; previously the company said it anticipated the breach included data on a “substantial proportion of people in America.”`
     },
     {
-        title: "A federal jury that Masimo smartwatches infringed Apple patents",
+        title: "Masimo smartwatches",
         content: `Bloomberg Law reports that the company was only seeking the statutory minimum of $250, and that's all it was awarded. Apple's attorney John Desmarais reportedly told jurors, “We're not here for the money.” Instead, he said the company hoped to force Masimo to “stop copying our design.”
 
 The company may have been disappointed on that front. The jury did find that the original design for Masimo's W1 Freedom and health module, as well as its original charger, infringed on Apple design patents, and that the infringement was willful.
@@ -80,7 +80,7 @@ function deleteText(index) {
     texts.splice(index, 1);
     updateTextList();
     if (currentTextIndex === index) {
-        document.getElementById('textTitle').textContent = 'Listening Practice App';
+        document.getElementById('textTitle').textContent = 'Select a text';
         document.getElementById('sentenceCount').textContent = '';
         sentences = [];
         currentSentenceIndex = 0;
@@ -93,7 +93,7 @@ function selectText(index) {
     const text = texts[index];
     document.getElementById('textTitle').textContent = text.title;
     sentences = text.content.match(/[^\.!\?]+[\.!\?]+/g) || [];
-    document.getElementById('sentenceCount').textContent = `This text has ${sentences.length} sentences.`;
+    document.getElementById('sentenceCount').textContent = `This text has ${sentences.length} sentences. Currently playing sentence ${currentSentenceIndex + 1}.`;
     currentSentenceIndex = 0;
     clearUserInputAndResult();
 }
